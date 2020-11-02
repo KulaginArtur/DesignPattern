@@ -17,6 +17,6 @@ public class BossVaate extends Vaate{
         paahine = vaateTehdas.createPaahine();
         kengat  = vaateTehdas.createKengat();
 
-        System.out.println("Jasperilla on päällä: \n"+ housut + paita + paahine + kengat + "\n");
+        System.out.println("Jasperilla on päällä: \n"+ housut + "," + paita + "," + paahine + "," + kengat + "\n");
     }
 }

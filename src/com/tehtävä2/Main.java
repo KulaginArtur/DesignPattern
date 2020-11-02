@@ -7,8 +7,6 @@ public class Main {
         VaateLuonti LuoVaateita = new JasperVaateLuonti();
 
         Vaate adidas = LuoVaateita.tilaaVaate("Adidas");
-
         Vaate boss   = LuoVaateita.tilaaVaate("Boss");
-
     }
 }
