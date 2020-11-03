@@ -9,7 +9,6 @@ public class ClockTimer extends Observable implements Runnable {
     int minute;
     int second;
 
-    @Override
     public String toString() {
         return hour + ":" + minute + ":" + second ;
     }
