@@ -1,12 +1,14 @@
 package com.tehtävä4;
 
+import java.util.Observable;
+
 public class Main {
 
     public static void main(String[] args) {
 
-        ClockTimer timer = new ClockTimer();
-        DigitalClock digitalClock = new DigitalClock(timer);
+        Observable ct = new ClockTimer();
 
-        digitalClock.update(timer);
+        new DigitalClock(ct);
+        new Thread((Runnable) ct).start();
     }
 }

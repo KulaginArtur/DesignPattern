@@ -1,24 +1,37 @@
 package com.tehtävä4;
 
 import java.time.LocalTime;
+import java.util.Observable;
 
-public class ClockTimer extends Subject {
+public class ClockTimer extends Observable implements Runnable {
 
-    LocalTime localTime = LocalTime.now();
+    int hour;
+    int minute;
+    int second;
 
-    public int getHour() {
-        return localTime.getHour();
+    @Override
+    public String toString() {
+        return hour + ":" + minute + ":" + second ;
     }
 
-    public int getMinute() {
-        return localTime.getMinute();
-    }
+    public void run() {
+        while (true) {
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
 
-    public int getSecond() {
-        return localTime.getSecond();
+            }
+            tick();
+        }
     }
-
     void tick() {
-        notifyObserver();
+        LocalTime localTime = LocalTime.now();
+
+        hour    = localTime.getHour();
+        minute  = localTime.getMinute();
+        second  = localTime.getSecond();
+
+        setChanged();
+        notifyObservers(toString());
     }
 }

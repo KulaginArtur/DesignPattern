@@ -1,23 +1,21 @@
 package com.tehtävä4;
 
-public class DigitalClock implements Observer{
+import java.util.Observable;
+import java.util.Observer;
 
-    private ClockTimer timer;
+public class DigitalClock implements Observer {
 
-    public DigitalClock(ClockTimer ct) {
-        this.timer = ct;
-        timer.attach(this);
+    private Observable timer;
+
+    public DigitalClock(Observable ct) {
+        timer = ct;
+        ct.addObserver(this);
     }
-    public void update(Subject s) {
-        if (s == timer) {
-            draw();
+
+    public void update(Observable o, Object object) {
+        if (o == timer) {
+            System.out.println(object);
         }
     }
-    private void draw() {
-        int hour    = timer.getHour();
-        int minute  = timer.getMinute();
-        int second  = timer.getSecond();
 
-        System.out.println("Kello on: " + hour + ":" + minute + ":" + second);
-    }
 }
