@@ -35,8 +35,4 @@ public class Pokemon {
     public void eat() {
         pokemonState.eat();
     }
-    private void evolve() {
-        pokemonState.evolve();
-    }
-
 }
