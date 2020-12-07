@@ -1,0 +1,14 @@
+package com.tehtävä22;
+
+public class WallButton {
+
+    Command command;
+
+    public WallButton(Command cmd) {
+        command = cmd;
+    }
+
+    public void push() {
+        command.execute();
+    }
+}
